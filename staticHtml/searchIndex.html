@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>检索</title>
+    <link rel="stylesheet" href="./content/js/moudle/weui/weui.min.css">
+    <link rel="stylesheet" href="./content/js/moudle/weui/jquery-weui.min.css">
+    <link rel="stylesheet" href="./content/css/base.css">
+    <link rel="stylesheet" href="./content/css/search.css">
+    <script src="./content/js/lib/zepto.js"></script>
+    <!-- <script type="script">
+        !(function(win, doc) { function setFontSize() { // 获取window 宽度 var winWidth = window.innerWidth; // 750宽度以上进行限制 需要css进行配合
+        var size = (winWidth / 750) * 100; //当前屏幕下的字体大小 doc.documentElement.style.fontSize = (size
+        < 100 ? size : 100) + 'px'; } var evt='onorientationchange' in win ? 'orientationchange' : 'resize'; var timer=n ull; win.addEventListener(evt,
+            function() { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); }, false); win.addEventListener(
+            "pageshow", function(e) { if (e.persisted) { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); } }, false); // 初始化
+            setFontSize(); }(window, document)); 
+    </script> -->
+</head>
+
+<body>
+    <header class="header">
+        <img src="./content/img/userlogo.png" alt="">
+        <span class="user-name iconfont icon-denglu">万方数据</span>
+    </header>
+    <div class="content">
+        <div class="search-box">
+            <div class="search-tab" data-role="tab">
+                <span class="item active">图书</span>
+                <span class="item">作者</span>
+            </div>
+            <div class="weui-search-bar" id="searchBar">
+                <form class="weui-search-bar__form">
+                    <div class="weui-search-bar__box">
+                        <i class="weui-icon-search"></i>
+                        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" data-required="true">
+                        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="weui-loadmore weui-loadmore_line">
+            <span class="weui-loadmore__tips">暂无数据</span>
+        </div>
+    </div>
+    <script src="./content/js/moudle/weui/jquery-weui.min.js"></script>
+    <script src="./content/js/tab.js"></script>
+    <script src="./content/js/search.js"></script>
+</body>
+
+</html>

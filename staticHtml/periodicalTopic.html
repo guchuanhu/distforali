@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>期刊选题策划</title>
+    <link rel="stylesheet" href="./content/js/moudle/weui/weui.min.css">
+    <link rel="stylesheet" href="./content/js/moudle/weui/jquery-weui.min.css">
+    <link rel="stylesheet" href="./content/css/base.css">
+    <link rel="stylesheet" href="./content/css/form.css">
+    <link rel="stylesheet" href="./content/css/search.css">
+    <script src="./content/js/lib/zepto.js"></script>
+    <!-- <script type="script">
+        !(function(win, doc) { function setFontSize() { // 获取window 宽度 var winWidth = window.innerWidth; // 750宽度以上进行限制 需要css进行配合
+        var size = (winWidth / 750) * 100; //当前屏幕下的字体大小 doc.documentElement.style.fontSize = (size
+        < 100 ? size : 100) + 'px'; } var evt='onorientationchange' in win ? 'orientationchange' : 'resize'; var timer=n ull; win.addEventListener(evt,
+            function() { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); }, false); win.addEventListener(
+            "pageshow", function(e) { if (e.persisted) { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); } }, false); // 初始化
+            setFontSize(); }(window, document)); 
+    </script> -->
+</head>
+
+<body>
+    <header class="header">
+        <img src="./content/img/userlogo.png" alt="">
+        <span class="user-name iconfont icon-denglu">万方数据</span>
+    </header>
+    <div class="content">
+        <div class="search-result" style="display:block;">
+            <div class="search-result-condition">
+                <div class="condition-title">选题信息</div>
+                <ul class="condition-con form-menu">
+                    <li class="menu-item input-true">
+                        <span class="menu-hd">期刊名称：</span>
+                        <input class="menu-bd" type="text">
+                    </li>
+                    <li class="menu-item input-true">
+                        <span class="menu-hd">选题主题：</span>
+                        <input class="menu-bd" type="text">
+                    </li>
+                    <li class="menu-item input-true">
+                        <span class="menu-hd">选题来源：</span>
+                        <input class="menu-bd" type="text" id="sourceTopic">
+                    </li>
+                    <li class="menu-item input-true">
+                        <span class="menu-hd">创建时间：</span>
+                        <input class="menu-bd menu-date" type="text" id="datetimeStart" /> -
+                        <input class="menu-bd menu-date" type="text" id="datetimeEnd" />
+                    </li>
+                    <li class="operation-btn">
+                        <input class="base-btn" type="submit" value="查询">
+                    </li>
+                </ul>
+            </div>
+            <div class="search-result-con">
+                <div class="result-total">
+                    <span>共检索到455条结果</span>
+                </div>
+                <div class="result-item">
+                    <h3>
+                        <span class="index">1.</span>
+                        <span class="title">物理测试</span>
+                    </h3>
+                    <p class="full-line">
+                        <span class="line-title">【选题主题】</span>
+                        <span class="line-con">知识就是力量</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【中图分类】</span>
+                        <span class="line-con">A--马克思主义、列宁主义、毛泽东思想、邓小平理论</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【选题来源】</span>
+                        <span class="line-con">自创建</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【模板】</span>
+                        <span class="line-con">期刊选题模版——测试用</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【创建时间】</span>
+                        <span class="line-con">2018-11-15</span>
+                    </p>
+                    <p class="related-operation">
+                        <span class="base-btn">下载报告</span>
+                        <span class="base-btn">查看报告</span>
+                    </p>
+                </div>
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+    </div>
+    <script src="./content/js/moudle/weui/jquery-weui.min.js"></script>
+    <script src="./content/js/select.js"></script>
+    <script>
+        $(function () {
+            $("#datetimeStart,#datetimeEnd").calendar();//日历
+            var loading = false;  //状态标记
+            var index = 0;
+            $(document.body).infinite().on('infinite', function () {
+                if (loading) return;
+                loading = true;
+                setTimeout(function () {
+                    if (index >= 2) {
+                        $(document.body).destroyInfinite();
+                        $('.weui-loadmore').children('.weui-loading').hide().next().html('已经全部加载');
+                    } else {
+                        $('.search-result-con').append('<p style="height:200px;"> 我是新加载的内容 </p>');
+                        loading = false;
+                    };
+                    index++;
+                }, 1500);   //模拟延迟
+            });
+        })
+    </script>
+</body>
+
+</html>

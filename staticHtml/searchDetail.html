@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>检索结果</title>
+    <link rel="stylesheet" href="./content/js/moudle/weui/weui.min.css">
+    <link rel="stylesheet" href="./content/js/moudle/weui/jquery-weui.min.css">
+    <link rel="stylesheet" href="./content/css/base.css">
+    <link rel="stylesheet" href="./content/css/search.css">
+    <script src="./content/js/lib/zepto.js"></script>
+    <!-- <script type="script">
+        !(function(win, doc) { function setFontSize() { // 获取window 宽度 var winWidth = window.innerWidth; // 750宽度以上进行限制 需要css进行配合
+        var size = (winWidth / 750) * 100; //当前屏幕下的字体大小 doc.documentElement.style.fontSize = (size
+        < 100 ? size : 100) + 'px'; } var evt='onorientationchange' in win ? 'orientationchange' : 'resize'; var timer=n ull; win.addEventListener(evt,
+            function() { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); }, false); win.addEventListener(
+            "pageshow", function(e) { if (e.persisted) { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); } }, false); // 初始化
+            setFontSize(); }(window, document)); 
+    </script> -->
+</head>
+
+<body>
+    <header class="header">
+        <img src="./content/img/userlogo.png" alt="">
+        <span class="user-name iconfont icon-denglu">万方数据</span>
+    </header>
+    <div class="content">
+        <div class="search-box">
+            <div class="search-tab" data-role="tab">
+                <span class="item active" data-value="books">图书</span>
+                <span class="item" data-value="authors">作者</span>
+            </div>
+            <div class="weui-search-bar" id="searchBar">
+                <form class="weui-search-bar__form">
+                    <div class="weui-search-bar__box">
+                        <i class="weui-icon-search"></i>
+                        <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" data-required="true">
+                        <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="search-result" id="books">
+            <div class="search-result-condition">
+                <div class="condition-hd weui-flex" data-role="tab" data-tab="true">
+                    <span class="item weui-flex__item">商城统计</span>
+                    <span class="item weui-flex__item">查询方式</span>
+                    <span class="item weui-flex__item">排序方式</span>
+                </div>
+                <div class="conditon-bd" data-tab-target="tab-content">
+                    <div class="item">
+                        <span class="item-btn active">当当</span>
+                        <span class="item-btn">天猫</span>
+                        <span class="item-btn">京东</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-btn">模糊查询</span>
+                        <span class="item-btn">精确查询</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-btn j-sort">请选择</span>
+                        <span class="item-btn j-sort">定价</span>
+                        <span class="item-btn j-sort">评论数</span>
+                        <span class="item-btn j-sort">评论得分</span>
+                        <span class="item-btn j-sort">售价</span>
+                    </div>
+                </div>
+            </div>
+            <div class="search-result-con">
+                <div class="result-total">
+                    <span>共检索到455条结果</span>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-img">
+                        <div class="book-img">
+                            <img src="./content/img/book.jpg" alt="">
+                        </div>
+                        <div class="item-con">
+                            <h3>
+                                <span class="index">1.</span>
+                                <span class="title">Fl<font color="red">a</font>Flash动画制作项目教程</span>
+                            </h3>
+                            <p class="full-line">
+                                <span class="line-title">【作者】</span>
+                                <span class="line-con">付达杰</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版单位】</span>
+                                <span class="line-con">经济科学出版社</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版日期】</span>
+                                <span class="line-con">2012-12</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【售价/定价】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【评论数/得分】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="related-link">
+                        <span class="link-title">相关链接：</span>
+                        <img src="./content/img/dd.png" alt="">
+                        <img src="./content/img/jd.png" alt="">
+                        <img src="./content/img/tm.png" alt="">
+                    </p>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-img">
+                        <div class="book-img">
+                            <img src="./content/img/book.jpg" alt="">
+                        </div>
+                        <div class="item-con">
+                            <h3>
+                                <span class="index">1.</span>
+                                <span class="title">Fl<font color="red">a</font>作项目教程</span>
+                            </h3>
+                            <p class="full-line">
+                                <span class="line-title">【作者】</span>
+                                <span class="line-con">付达杰</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版单位】</span>
+                                <span class="line-con">经济科学出版社</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版日期】</span>
+                                <span class="line-con">2012-12</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【售价/定价】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【评论数/得分】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="related-link">
+                        <span class="link-title">相关链接：</span>
+                        <img src="./content/img/dd.png" alt="">
+                        <img src="./content/img/jd.png" alt="">
+                        <img src="./content/img/tm.png" alt="">
+                    </p>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-img">
+                        <div class="book-img">
+                            <img src="./content/img/book.jpg" alt="">
+                        </div>
+                        <div class="item-con">
+                            <h3>
+                                <span class="index">1.</span>
+                                <span class="title">Fl<font color="red">a</font>Flash动画制作项目教程</span>
+                            </h3>
+                            <p class="full-line">
+                                <span class="line-title">【作者】</span>
+                                <span class="line-con">付达杰</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版单位】</span>
+                                <span class="line-con">经济科学出版社</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版日期】</span>
+                                <span class="line-con">2012-12</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【售价/定价】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【评论数/得分】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="related-link">
+                        <span class="link-title">相关链接：</span>
+                        <img src="./content/img/dd.png" alt="">
+                        <img src="./content/img/jd.png" alt="">
+                        <img src="./content/img/tm.png" alt="">
+                    </p>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-img">
+                        <div class="book-img">
+                            <img src="./content/img/book.jpg" alt="">
+                        </div>
+                        <div class="item-con">
+                            <h3>
+                                <span class="index">1.</span>
+                                <span class="title">Fl<font color="red">a</font>Flash动画制作项目教程</span>
+                            </h3>
+                            <p class="full-line">
+                                <span class="line-title">【作者】</span>
+                                <span class="line-con">付达杰</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版单位】</span>
+                                <span class="line-con">经济科学出版社</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版日期】</span>
+                                <span class="line-con">2012-12</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【售价/定价】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【评论数/得分】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="related-link">
+                        <span class="link-title">相关链接：</span>
+                        <img src="./content/img/dd.png" alt="">
+                        <img src="./content/img/jd.png" alt="">
+                        <img src="./content/img/tm.png" alt="">
+                    </p>
+                </div>
+                <div class="result-item">
+                    <div class="result-item-img">
+                        <div class="book-img">
+                            <img src="./content/img/book.jpg" alt="">
+                        </div>
+                        <div class="item-con">
+                            <h3>
+                                <span class="index">1.</span>
+                                <span class="title">Fl<font color="red">a</font>Flash动画制作项目教程</span>
+                            </h3>
+                            <p class="full-line">
+                                <span class="line-title">【作者】</span>
+                                <span class="line-con">付达杰</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版单位】</span>
+                                <span class="line-con">经济科学出版社</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【出版日期】</span>
+                                <span class="line-con">2012-12</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【售价/定价】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                            <p class="full-line">
+                                <span class="line-title">【评论数/得分】</span>
+                                <span class="line-con">2012/100</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="related-link">
+                        <span class="link-title">相关链接：</span>
+                        <img src="./content/img/dd.png" alt="">
+                        <img src="./content/img/jd.png" alt="">
+                        <img src="./content/img/tm.png" alt="">
+                    </p>
+                </div>
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+        <div class="search-result" id="authors">
+            <div class="search-result-condition">
+                <div class="condition-hd weui-flex" data-role="tab" data-tab="true">
+                    <span class="item weui-flex__item">查询方式</span>
+                    <span class="item weui-flex__item">排序方式</span>
+                </div>
+                <div class="conditon-bd" data-tab-target="tab-content">
+                    <div class="item">
+                        <span class="item-btn">模糊查询</span>
+                        <span class="item-btn">精确查询</span>
+                    </div>
+                    <div class="item">
+                        <span class="item-btn j-sort">请选择</span>
+                        <span class="item-btn j-sort">发表论文数</span>
+                    </div>
+                </div>
+            </div>
+            <div class="search-result-con">
+                <div class="result-total">
+                    <span>共检索到45条结果</span>
+                </div>
+                <div class="result-item">
+                    <h3>
+                        <span class="index">1.</span>
+                        <a class="title link" href="./authorsDetail.html" target="_blank">陈明昕</a>
+                    </h3>
+                    <p class="full-line">
+                        <span class="line-title">【单位】</span>
+                        <span class="line-con">秦皇岛市光岳房地产开发有限公司</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【论文量】</span>
+                        <span class="line-con">456</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【来源】</span>
+                        <span class="line-con">万方</span>
+                    </p>
+                </div>
+                <div class="result-item">
+                    <h3>
+                        <span class="index">2.</span>
+                        <a class="title link" href="./authorsDetail.html" target="_blank">陈明昕</a>
+                    </h3>
+                    <p class="full-line">
+                        <span class="line-title">【单位】</span>
+                        <span class="line-con">秦皇岛市光岳房地产开发有限公司</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【论文量】</span>
+                        <span class="line-con">456</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【来源】</span>
+                        <span class="line-con">万方</span>
+                    </p>
+                </div>
+                <div class="result-item">
+                    <h3>
+                        <span class="index">3.</span>
+                        <span class="title">陈明昕</span>
+                    </h3>
+                    <p class="full-line">
+                        <span class="line-title">【单位】</span>
+                        <span class="line-con">秦皇岛市光岳房地产开发有限公司</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【论文量】</span>
+                        <span class="line-con">456</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【来源】</span>
+                        <span class="line-con">万方</span>
+                    </p>
+                </div>
+                <div class="result-item">
+                    <h3>
+                        <span class="index">4.</span>
+                        <span class="title">陈明昕</span>
+                    </h3>
+                    <p class="full-line">
+                        <span class="line-title">【单位】</span>
+                        <span class="line-con">秦皇岛市光岳房地产开发有限公司</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【论文量】</span>
+                        <span class="line-con">456</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【来源】</span>
+                        <span class="line-con">万方</span>
+                    </p>
+                </div>
+                <div class="result-item">
+                    <h3>
+                        <span class="index">5.</span>
+                        <span class="title">陈明昕</span>
+                    </h3>
+                    <p class="full-line">
+                        <span class="line-title">【单位】</span>
+                        <span class="line-con">秦皇岛市光岳房地产开发有限公司</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【论文量】</span>
+                        <span class="line-con">456</span>
+                    </p>
+                    <p class="full-line">
+                        <span class="line-title">【来源】</span>
+                        <span class="line-con">万方</span>
+                    </p>
+                </div>
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+    </div>
+    <script src="./content/js/moudle/weui/jquery-weui.min.js"></script>
+    <script src="./content/js/tab.js"></script>
+    <script src="./content/js/search.js"></script>
+    <script src="./content/js/getUrlVal.js"></script>
+    <script>
+        $(function () {
+            $('#' + $.getUrlVal('type')).show();
+            $('.search-tab').children().each(function () {
+                $(this).data('value') === $.getUrlVal('type') ? $(this).addClass('active').siblings().removeClass(
+                    'active') : '';
+            })
+            var loading = false; //状态标记
+            var index = 0;
+            $(document.body).infinite().on('infinite', function () {
+                if (loading) return;
+                loading = true;
+                setTimeout(function () {
+                    if (index >= 2) {
+                        $(document.body).destroyInfinite();
+                        $('#' + $.getUrlVal('type')).find('.weui-loadmore').children(
+                            '.weui-loading').hide().next().html('已经全部加载');
+                    } else {
+                        $('#' + $.getUrlVal('type')).find('.search-result-con').append(
+                            '<p style="height:200px;"> 我是新加载的内容 </p>');
+                        loading = false;
+                    };
+                    index++;
+                }, 1500); //模拟延迟
+            });
+        })
+    </script>
+</body>
+
+</html>

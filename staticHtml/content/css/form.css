@@ -1,0 +1,57 @@
+.form-menu .menu-item {
+  position: relative;
+  padding-left: 100px;
+}
+.form-menu .menu-item:after {
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.form-menu .menu-item .menu-hd {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  text-align: right;
+}
+.form-menu .menu-item .menu-hd .menu-hb-req {
+  margin-right: 2px;
+  color: #f00;
+}
+.form-menu .menu-item .menu-bd {
+  box-sizing: border-box;
+  width: 100%;
+}
+.form-menu .menu-item label.error {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  line-height: 20px;
+  color: #f00;
+}
+.form-menu .menu-item.input-false {
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+.form-menu .menu-item.input-true {
+  padding-bottom: 20px;
+  line-height: 35px;
+}
+.form-menu .menu-item.input-true .menu-bd {
+  padding-left: 5px;
+  border: 1px solid #ccc;
+  height: 35px;
+  line-height: 35px;
+}
+.operation-btn {
+  margin-top: 30px;
+}
+.operation-btn .base-btn {
+  width: 100%;
+}
+.weui-select-modal .weui-cells {
+  max-height: 10rem;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>绑定用户</title>
+    <link rel="stylesheet" href="./content/css/base.css">
+    <link rel="stylesheet" href="./content/css/form.css">
+    <script src="./content/js/lib/zepto.js"></script>
+    <script type="script">
+        !(function(win, doc) { function setFontSize() { // 获取window 宽度 var winWidth = window.innerWidth; // 750宽度以上进行限制 需要css进行配合
+        var size = (winWidth / 750) * 100; //当前屏幕下的字体大小 doc.documentElement.style.fontSize = (size
+        < 100 ? size : 100) + 'px'; } var evt='onorientationchange' in win ? 'orientationchange' : 'resize'; var timer=n ull; win.addEventListener(evt,
+            function() { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); }, false); win.addEventListener(
+            "pageshow", function(e) { if (e.persisted) { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); } }, false); // 初始化
+            setFontSize(); }(window, document)); 
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./content/img/userlogo.png" alt="">
+        <span class="user-name iconfont icon-denglu">万方数据</span>
+    </header>
+    <div class="content">
+        <form action="">
+            <ul class="form-menu">
+                <li class="menu-item input-false">
+                    <lable class="menu-hd">当前微信号：</lable>
+                    <span class="menu-bd">张三</span>
+                </li>
+                <li class="menu-item input-false">
+                    <lable class="menu-hd">绑定状态：</lable>
+                    <span class="menu-bd">未绑定</span>
+                </li>
+                <li class="menu-item input-true">
+                    <lable class="menu-hd">用户名：</lable>
+                    <input class="menu-bd" type="text" placeholder="请输入用户名">
+                </li>
+                <li class="menu-item input-true">
+                    <lable class="menu-hd">密码：</lable>
+                    <input class="menu-bd" type="password" placeholder="请输入密码">
+                </li>
+            </ul>
+            <div class="operation-btn">
+                <input class="base-btn" type="button" value="确认绑定">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

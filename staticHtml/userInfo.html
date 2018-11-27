@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>用户信息</title>
+    <link rel="stylesheet" href="./content/js/moudle/weui/weui.min.css">
+    <link rel="stylesheet" href="./content/js/moudle/weui/jquery-weui.min.css">
+    <link rel="stylesheet" href="./content/css/base.css">
+    <link rel="stylesheet" href="./content/css/form.css">
+    <script src="./content/js/lib/zepto.js"></script>
+    <!-- <script type="script">
+        !(function(win, doc) { function setFontSize() { // 获取window 宽度 var winWidth = window.innerWidth; // 750宽度以上进行限制 需要css进行配合
+        var size = (winWidth / 750) * 100; //当前屏幕下的字体大小 doc.documentElement.style.fontSize = (size
+        < 100 ? size : 100) + 'px'; } var evt='onorientationchange' in win ? 'orientationchange' : 'resize'; var timer=n ull; win.addEventListener(evt,
+            function() { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); }, false); win.addEventListener(
+            "pageshow", function(e) { if (e.persisted) { clearTimeout(timer); timer=s etTimeout(setFontSize, 100); } }, false); // 初始化
+            setFontSize(); }(window, document)); 
+    </script> -->
+</head>
+
+<body>
+    <header class="header">
+        <img src="./content/img/userlogo.png" alt="">
+        <span class="user-name iconfont icon-denglu">万方数据</span>
+    </header>
+    <div class="content">
+        <form action="" method="post">
+            <ul class="form-menu">
+                <li class="menu-item input-false">
+                    <label class="menu-hd">姓名：</label>
+                    <span class="menu-bd">万方数据</span>
+                </li>
+                <li class="menu-item input-false">
+                    <label class="menu-hd">机构：</label>
+                    <span class="menu-bd">万方数据</span>
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">性别：</label>
+                    <input class="menu-bd weui-input" id="sexSel" type="text" name="users.sex" value="" placeholder="请选择性别">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">所属国家：</label>
+                    <input class="menu-bd weui-input" id="nationSel" type="text" name="users.country" value="" placeholder="请选择国家">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">所属省份：</label>
+                    <input class="menu-bd weui-input" id="provincesSel" type="text" name="users.province" value="" placeholder="请选择省份">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">详细地址：</label>
+                    <input class="menu-bd" type="text" name="users.address" placeholder="请输入详细地址" data-rangelength="[0,600]" data-rangelength-message="详细地址输入1~600字符内">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">证件类型：</label>
+                    <input class="menu-bd weui-input" id="cardSel" type="text" name="users.identityType" value="" placeholder="请选择证件类型">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">
+                        <span class="menu-hb-req">*</span>证件号码：</label>
+                    <input class="menu-bd" type="text" name="users.identityNum" placeholder="请输入证件号码" data-required="true" data-required-message="不能为空">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">固定电话：</label>
+                    <input class="menu-bd" type="text" name="users.phone" placeholder="请输入固定电话" data-phone="true" data-phone-message="电话格式不正确">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">
+                        <span class="menu-hb-req">*</span>手机：</label>
+                    <input class="menu-bd" type="text" name="users.mobile" placeholder="请输入手机" data-required="true" data-required-message="不能为空"
+                        data-mobile="true" data-mobile-message="手机格式不正确">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">传真：</label>
+                    <input class="menu-bd" type="text" name="users.fax" placeholder="请输入传真">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">邮政编码：</label>
+                    <input class="menu-bd" type="text" name="users.postcode" placeholder="请输入邮政编码" data-post="true" data-post-message="邮政编码格式不正确">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">
+                        <span class="menu-hb-req">*</span>电子邮箱：</label>
+                    <input class="menu-bd" type="text" name="users.email" placeholder="请输入密码" data-required="true" data-required-message="不能为空"
+                        data-email="true" data-email-message="邮箱格式不正确">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">
+                        <span class="menu-hb-req">*</span>领域：</label>
+                    <input class="menu-bd weui-input" id="fieldSel" type="text" name="publishFieldId" value="" placeholder="请选择领域" data-required="true"
+                        data-required-message="不能为空">
+                </li>
+                <li class="menu-item input-true">
+                    <label class="menu-hd">
+                        <span class="menu-hb-req">*</span>分类：</label>
+                    <input class="menu-bd" type="text" name="btype_id" placeholder="请输入密码" data-required="true" data-required-message="不能为空"
+                        data-maxlength="300" data-maxlength-message="分类最多300个字符">
+                </li>
+            </ul>
+            <div class="operation-btn">
+                <input class="base-btn" type="submit" value="确认绑定">
+            </div>
+        </form>
+    </div>
+    <script src="./content/js/moudle/weui/jquery-weui.min.js"></script>
+    <script src="./content/js/valid.js"></script>
+    <script src="./content/js/select.js"></script>
+    <script>
+        $(function () {
+            $('form').zValidate({
+                submit: function ($form, params) {//提交逻辑
+                    $.alert('绑定成功');
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
